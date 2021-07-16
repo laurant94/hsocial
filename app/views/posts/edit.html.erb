@@ -1,0 +1,26 @@
+<div class="row text-center">
+  <div class="col-sm-12">
+    <h2 class="">Modifier la publication</h2>
+  </div>
+</div>
+
+<%if @post.invalid?%>
+  <div class="alert alert-danger">
+    <% @post.errors.full_messages.each do |m| %>
+      <%= m%>
+    <%end%>
+  </div>
+<%end%>
+
+<div class="row">
+  <div class="col-sm-12">
+    <%= form_for @post, html: { multipart: true }  do |f| %>
+      
+      <div class="form-group">
+        <%= f.label :content, 'Contenue' %>
+        <%= f.text_area :content, class:"form-control" %>
+      </div>
+      <%= f.submit 'Créer la publication',class:'btn btn-success', disable_with: 'Submiting...' %>
+    <% end %>
+  </div>
+</div>
