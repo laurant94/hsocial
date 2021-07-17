@@ -3,6 +3,7 @@
     <h2 class="">Ajouter une publication</h2>
   </div>
 </div>
+
 <%if @post.invalid?%>
   <div class="alert alert-danger">
     <% @post.errors.full_messages.each do |m| %>
@@ -14,14 +15,11 @@
 <div class="row">
   <div class="col-sm-12">
     <%= form_for @post, html: { multipart: true }  do |f| %>
-     
       <div class="form-group">
         <%= f.label :content, 'Contenue' %>
         <%= f.text_area :content, class:"form-control" %>
       </div>
-      <input type="submit" value="Ajouter la publication" 
-      data-confirm="Voulez-vous réèlement éffectuer cette action?"
-      class="btn btn-success btn-sm">
+      <input type="submit" value="Ajouter la publication" data-confirm="Voulez-vous réèlement éffectuer cette action?" class="btn btn-success btn-sm" />
     <% end %>
   </div>
 </div>

@@ -7,7 +7,6 @@ class PostsController < ApplicationController
   end
 
   def show
-
   end
 
   def new
@@ -24,7 +23,6 @@ class PostsController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
@@ -39,7 +37,6 @@ class PostsController < ApplicationController
     @post.destroy
     redirect_to posts_path, success: "Publication supprimer avec succes"
   end
-
 
   private 
   def get_post
